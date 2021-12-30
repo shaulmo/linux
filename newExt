@@ -4,7 +4,7 @@ ubuntu@ubuntu:~/tmp$ touch demo{1..4}.ext
 ubuntu@ubuntu:~/tmp$ ls
 demo1.ext demo2.ext demo3.ext demo4.ext
 
-# Creating a bash script file with the command nano newext.sh (one can also vi if.) with the following content:
+# Creating a bash script file with the command nano newext.sh (one can also use vi if.) with the following content:
 
 #!/bin/bash
 for f in *.ext; do mv -- "$f" "${f%.ext}.newExt"; done
