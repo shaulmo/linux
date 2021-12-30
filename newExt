@@ -1,0 +1,21 @@
+# Using the touch command to create the demo files:
+
+ubuntu@ubuntu:~/tmp$ touch demo{1..4}.ext
+ubuntu@ubuntu:~/tmp$ ls
+demo1.ext demo2.ext demo3.ext demo4.ext
+
+# Creating a bash shell script file with the command nano newext.sh with the following content:
+
+#!/bin/bash
+for f in *.ext; do mv -- "$f" "${f%.ext}.newExt"; done
+
+# Setting permissions with the command:
+ubuntu@ubuntu:~/tmp$ chmod 755 newext.sh
+
+# Followed by running the command:
+
+ubuntu@ubuntu:~/tmp$ ./newext.sh
+
+# Results in:
+ubuntu@ubuntu:~/tmp$ ls
+demo1.newExt demo2.newExt demo3.newExt demo4.newExt newext.sh
